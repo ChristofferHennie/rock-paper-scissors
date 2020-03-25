@@ -1,3 +1,15 @@
+# Rock Paper Scissors
+
+This is the official repo for the rock paper scissors web app project
+This web app is created with reactJS and has no backend logic. Everything is handeld in the frontend.
+
+**Created by Christoffer I. Hennie**
+2020
+
+*Evrything below this (&#8595) line is just plain boiler plate created by create react app command ´npx create-react-app .´
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
