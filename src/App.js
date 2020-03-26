@@ -4,8 +4,8 @@ import DisplayImages from './components/DisplayImages'
 
 export default class App extends Component {
   state = {
-    userChoice: "rock",
-    // compChoice: "scissors",
+    userChoice: "paper",
+    compChoice: "paper",
     options: [
       {
         name: "rock",

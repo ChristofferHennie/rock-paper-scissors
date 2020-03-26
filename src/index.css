@@ -37,5 +37,6 @@
 .images > img {
   height: 70%;
   width: auto;
-  margin: 10px
+  margin: 10px;
+  color: black;
 }
