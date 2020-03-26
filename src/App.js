@@ -5,7 +5,7 @@ import DisplayImages from './components/DisplayImages'
 export default class App extends Component {
   state = {
     userChoice: "rock",
-    compChoice: "paper",
+    // compChoice: "scissors",
     options: [
       {
         name: "rock",
@@ -30,7 +30,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={localStyle}>
         <h1>Rock Paper Scissors</h1>
         <div className="choices">
           <Choices 
@@ -48,3 +48,7 @@ export default class App extends Component {
   }
 }
 
+
+const localStyle = {
+  maxWidth: window.screen.width + 'px'
+}

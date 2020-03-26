@@ -20,7 +20,7 @@ export default class DisplaySVG extends Component {
 
   render() {
     return (
-      <div>
+      <div className="images">
         <img src={this.updateImage(this.props.userChoice)} alt="Rock Paper Scissors"/>
         <img src={this.updateImage(this.props.compChoice)} alt="Rock Paper Scissors"/>
       </div>
