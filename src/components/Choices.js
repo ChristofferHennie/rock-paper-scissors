@@ -8,9 +8,16 @@ export default class Choices extends Component {
 	render() {
 		return this.props.options.map((option) => (
 			<label key={option.id}>
-				<input type="radio" name="rpc" value={option.name} checked={option.name === this.props.stateUserChoice} onChange={this.updateUserChoice}/>{' '}
+				<input 
+					type="radio" 
+					name="rpc" 
+					value={option.name} 
+					checked={option.name === this.props.stateUserChoice} 
+					onChange={this.updateUserChoice}
+				/>{' '}
 				{option.name}
 			</label>
 		))
 	}
 }
+
