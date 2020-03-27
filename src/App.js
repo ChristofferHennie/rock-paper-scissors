@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Choices from './components/Choices'
 import DisplayImages from './components/DisplayImages'
+import WhoWon from './components/WhoWins'
 
 export default class App extends Component {
   state = {
@@ -39,6 +40,7 @@ export default class App extends Component {
             stateUserChoice={this.state.userChoice} 
           />
         </div>
+        <WhoWon userChoice={this.state.userChoice} className="whoWinsBTN"/>
         <DisplayImages 
           compChoice={this.state.compChoice} 
           userChoice={this.state.userChoice}
