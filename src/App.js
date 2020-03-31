@@ -7,6 +7,7 @@ export default class App extends Component {
   state = {
     userChoice: "paper",
     compChoice: "paper",
+    whoWon: "tie",
     options: [
       {
         name: "rock",
@@ -29,9 +30,13 @@ export default class App extends Component {
     })
   }
 
+  whoWon = (compChoice, whoWon) => {
+    this.setState(compChoice, whoWon, () => console.log(this.state.whoWon))
+  }
+
   render() {
     return (
-      <div className="App" style={localStyle}>
+      <div className="App">
         <h1>Rock Paper Scissors</h1>
         <div className="choices">
           <Choices 
@@ -40,17 +45,17 @@ export default class App extends Component {
             stateUserChoice={this.state.userChoice} 
           />
         </div>
-        <WhoWon userChoice={this.state.userChoice} className="whoWinsBTN"/>
+        <WhoWon 
+          userChoice={this.state.userChoice} 
+          whoWon={this.whoWon} 
+          className="whoWinsBTN"
+        />
         <DisplayImages 
           compChoice={this.state.compChoice} 
           userChoice={this.state.userChoice}
+          whoWon={this.state.whoWon}
         />
       </div>
     )
   }
-}
-
-
-const localStyle = {
-  maxWidth: window.screen.width + 'px'
 }
