@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 
 export default class DisplayWinner extends Component {
-  whoWonText = () => {
-    switch (this.props.whoWon) {
+  resultText = () => {
+    switch (this.props.result) {
       case "tie":
         return "Sorry, it's a tie";
       case "win":
@@ -14,10 +14,32 @@ export default class DisplayWinner extends Component {
     }
   };
 
+  getStyle = (val) => {
+    return {
+      display: val ? "block" : "none",
+      background: this.switchFunc(val),
+    };
+  };
+
+  switchFunc = (val) => {
+    switch (val) {
+      case "tie":
+        return "#2A8EEB";
+      case "win":
+        return "#31FF1F";
+      case "lose":
+        return "#FF1310";
+      default:
+        return "#696969";
+    }
+  };
+
   render() {
     return (
-      <div className='whoWonStyle'>
-        <p>{this.whoWonText()}</p>
+      <div
+        className='resultStyle'
+        style={this.getStyle(this.props.result)}>
+        <p>{this.resultText()}</p>
       </div>
     );
   }

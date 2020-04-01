@@ -1,61 +1,63 @@
-import React, { Component } from 'react'
-import Choices from './components/Choices'
-import DisplayImages from './components/DisplayImages'
-import WhoWon from './components/WhoWins'
+import React, {Component} from "react";
+import Choices from "./components/Choices";
+import DisplayImages from "./components/DisplayImages";
+import Result from "./components/Result";
 
 export default class App extends Component {
   state = {
     userChoice: "paper",
     compChoice: "paper",
-    whoWon: "tie",
+    result: "",
     options: [
       {
         name: "rock",
-        id: 1
+        id: 1,
       },
       {
         name: "paper",
-        id: 2
+        id: 2,
       },
       {
         name: "scissors",
-        id: 3
+        id: 3,
       },
-    ]
+    ],
   };
 
   updateUserChoice = (e) => {
-    this.setState({ userChoice: e }, () => {
-      console.log(this.state.userChoice)
-    })
-  }
+    this.setState({userChoice: e, result: ""}, () => {
+      console.log(this.state.userChoice);
+    });
+  };
 
-  whoWon = (compChoice, whoWon) => {
-    this.setState(compChoice, whoWon, () => console.log(this.state.whoWon))
-  }
+  result = (compChoice, result) => {
+    this.setState(compChoice, result, () =>
+      console.log(this.state.result)
+    );
+  };
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <h1>Rock Paper Scissors</h1>
-        <div className="choices">
-          <Choices 
-            options={this.state.options} 
-            choice={this.updateUserChoice} 
-            stateUserChoice={this.state.userChoice} 
+        <div className='choices'>
+          <Choices
+            options={this.state.options}
+            choice={this.updateUserChoice}
+            stateUserChoice={this.state.userChoice}
           />
         </div>
-        <WhoWon 
-          userChoice={this.state.userChoice} 
-          whoWon={this.whoWon} 
-          className="whoWinsBTN"
-        />
-        <DisplayImages 
-          compChoice={this.state.compChoice} 
+        <Result
           userChoice={this.state.userChoice}
-          whoWon={this.state.whoWon}
+          result={this.result}
+          className='resultBTN'
+        />
+        <DisplayImages
+          compChoice={this.state.compChoice}
+          userChoice={this.state.userChoice}
+          result={this.state.result}
         />
       </div>
-    )
+    );
   }
 }
