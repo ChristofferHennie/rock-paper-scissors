@@ -40,7 +40,7 @@ export default class App extends Component {
     return (
       <div className='App'>
         <h1>Rock Paper Scissors</h1>
-        <div className='choices'>
+        <div className="options">
           <Choices
             options={this.state.options}
             choice={this.updateUserChoice}
