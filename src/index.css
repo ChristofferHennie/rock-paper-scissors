@@ -7,7 +7,6 @@
 .App > h1 {
   text-align: center;
   padding: 5px 0 0.5em 0;
-  margin-top: 10px;
 }
 
 .options {
@@ -31,9 +30,9 @@
 }
 
 .images > img {
-  height: 70vh;
+  height: 65vh;
   width: auto;
-  margin: 10px;
+  margin: 5px;
   color: black;
 }
 
@@ -61,6 +60,14 @@
   background-color: #333333;
   border: none;
   border-radius: 7px;
+}
+
+.BtnStyle > button:hover {
+}
+
+.BtnStyle > button:active {
+  background-color: #242424;
+  transform: translateY(2px);
 }
 
 .parent-score-board {
