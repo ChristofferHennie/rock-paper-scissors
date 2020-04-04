@@ -33,40 +33,10 @@ export default class App extends Component {
     );
   };
 
-  result = (compChoice, result) => {
-    this.updateScore();
-    this.setState(compChoice, result, () => {
+  result = (compChoice, result, playerScore, compScore) => {
+    this.setState(compChoice, result, playerScore, compScore, () => {
       console.log(this.state.result);
     });
-  };
-
-  updateScore = (result = this.state.result) => {
-    switch (result) {
-      case "win":
-        return this.setState(
-          (prevPlayerScore = this.state.playerScore) => {
-            return (
-              {
-                playerScore: prevPlayerScore++,
-              },
-              () => console.log(this.state.compScore)
-            );
-          }
-        );
-      case "lose":
-        return this.setState(
-          (prevCompScore = this.state.compScore) => {
-            return (
-              {
-                compScore: prevCompScore++,
-              },
-              () => console.log(this.state.compScore)
-            );
-          }
-        );
-      default:
-        return console.log("tie");
-    }
   };
 
   render() {
