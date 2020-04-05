@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 
 export default class DisplayWinner extends Component {
   resultText = () => {
@@ -44,3 +45,7 @@ export default class DisplayWinner extends Component {
     );
   }
 }
+
+DisplayWinner.propTypes = {
+  result: PropTypes.string.isRequired,
+};

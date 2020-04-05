@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import DisplayWinner from "./DisplayWinner";
 import paperSVG from "../assets/svg/paper.svg";
 import rockSVG from "../assets/svg/rock.svg";
@@ -35,3 +36,9 @@ export default class DisplaySVG extends Component {
     );
   }
 }
+
+DisplaySVG.propTypes = {
+  compChoice: PropTypes.string.isRequired,
+  userChoice: PropTypes.string.isRequired,
+  result: PropTypes.string.isRequired,
+};

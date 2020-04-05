@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 
 export default class Choices extends Component {
   updateUserChoice = (e) => {
@@ -20,3 +21,9 @@ export default class Choices extends Component {
     ));
   }
 }
+
+Choices.propTypes = {
+  stateUserChoice: PropTypes.string.isRequired,
+  choice: PropTypes.func.isRequired,
+  options: PropTypes.object.isRequired,
+};

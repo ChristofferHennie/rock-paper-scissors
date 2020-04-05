@@ -1,6 +1,7 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 
-export default class result extends Component {
+export default class Result extends Component {
   state = {
     compChoice: "",
     result: "",
@@ -10,11 +11,25 @@ export default class result extends Component {
 
   optionsComp = ["rock", "paper", "scissors"];
 
+  randoButNotTwice = (lastRandom, random) => {
+    let min = 0;
+    let max = 2;
+
+    if (lastRandom === undefined) {
+      random = Math.floor(Math.random() * (max - min + 1)) + min;
+    } else {
+      random = Math.floor(Math.random() * (max - min)) + min;
+      if (random >= lastRandom) random += 1;
+    }
+    lastRandom = random;
+
+    console.log(random);
+    return random;
+  };
+
   result = () => {
     let uc = this.props.userChoice;
-    let cc = this.optionsComp[
-      Math.floor(Math.random() * this.optionsComp.length)
-    ];
+    let cc = this.optionsComp[this.randoButNotTwice()];
 
     console.log(uc, cc);
 
@@ -92,3 +107,8 @@ export default class result extends Component {
     );
   }
 }
+
+Result.protoTypes = {
+  userChoice: PropTypes.string.isRequired,
+  result: PropTypes.func.isRequired,
+};
